@@ -2,7 +2,7 @@
     require __DIR__."/../vendor/autoload.php";
 
     $whoops = new \Whoops\Run; // Crea una instancia de la clase "Run" de la libreria "Whoops".
-    $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler); // Crea una instancia de la clase "Run" de la libreria "Whoops".
+    $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler); // Crea una instancia de la clase "PrettyHandler" de la libreria "Whoops\Handler".
     $whoops -> register();
 
     $menu = [
