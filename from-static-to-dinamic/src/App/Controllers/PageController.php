@@ -44,10 +44,17 @@
             require $this -> viewsDir . 'about.view.php';
         }
 
-        public function contact() {
+        public function contact($processed = false) {
             $titulo = "Contact";
             $main = "Contact page content";
             require $this -> viewsDir . 'contact.view.php';
+        }
+
+        public function contactProcess() {
+            $form = $_POST;
+            // Realizar alguna accion a partir de los datos del formulario.
+
+            $this -> contact(true);
         }
     }
 ?>

@@ -3,9 +3,10 @@
     use PAW\Core\Exceptions\RouteNotFoundException;
     
     $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-    $logger -> info("Request to:" . $path);
+    $httpMethod = parse_url($_SERVER["REQUEST_METHOD"], PHP_URL_PATH);
+    $logger -> info("Request to: {$httpMethod} {$path}");
     try {
-        $router -> direct($path);
+        $router -> direct($path, $httpMethod);
         $logger -> info("Successful request: 200", ["INFO" => $path]);
     } catch (RouteNotFoundException $exception) {
         $router -> direct("/notFound");
