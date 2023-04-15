@@ -1,4 +1,10 @@
 <?php
+    require __DIR__."/../vendor/autoload.php";
+
+    $whoops = new \Whoops\Run; // Crea una instancia de la clase "Run" de la libreria "Whoops".
+    $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler); // Crea una instancia de la clase "Run" de la libreria "Whoops".
+    $whoops -> register();
+
     $menu = [
         [
             "href" => "/",
@@ -12,12 +18,18 @@
             "href" => "/services",
             "name" => "Services",
         ],
+        [
+            "href" => "/contact",
+            "name" => "Contact",
+        ],
 
     ];
 
     // $request_uri = parse_url($_SERVER["REQUEST_URI"]);
     // $path = $request_uri["path"];
     $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+    
+    
     if($path == "/"){
         $titulo = "Hello world, ". htmlspecialchars($_GET['nombre'] ?? "PAW");
         require __DIR__ .'/../src/index.view.php';
@@ -29,6 +41,10 @@
         $titulo = "About us";
         $main = "About us page content";
         require __DIR__ .'/../src/about.view.php';
+    } else if($path == "/contact"){
+        $titulo = "Contact";
+        $main = "Contact page content";
+        require __DIR__ .'/../src/contact.view.php';
     } else {
         // Código 404.
         echo "Page Not Found";
