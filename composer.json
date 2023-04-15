@@ -1,0 +1,23 @@
+{
+	"name": "paw/hello-php",
+	"description": "Hello PHP",
+	"keywords": [
+		"php",
+		"mvc"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "mgimenez",
+			"role": "Creator / Main Developer"
+		}
+	],
+	"require": {
+		"php": ">= 7.4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"PAW\\": "src/"
+		}
+	}
+}
