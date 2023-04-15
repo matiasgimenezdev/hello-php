@@ -44,10 +44,10 @@
     } else if($path == "/contact"){
         $titulo = "Contact";
         $main = "Contact page content";
-        require __DIR__ .'/../src/contact.view.php';
+        require __DIR__.'/../src/contact.view.php';
     } else {
-        // Código 404.
-        echo "Page Not Found";
+        http_response_code(404); // Le indica al web server el status code de la respuesta
+        require __DIR__ .'/../src/not-found.view.php';
     };
     // echo "<pre>";
     // var_dump($_SERVER);
