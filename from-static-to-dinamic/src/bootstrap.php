@@ -3,11 +3,14 @@
 
     use PAW\Core\Router;
     use PAW\Core\Config;
+    use PAW\Core\Request;
 
     use Monolog\Logger;
     use Monolog\Handler\StreamHandler;
     
     $config = new Config;
+
+    $request = new Request;
 
     $logger = new Logger("mvc-app");
     $logHandler = new StreamHandler($config -> getConfig("LOG_PATH"));
@@ -24,7 +27,6 @@
     $router -> get("/services", "PageController@services");
     $router -> get("/contact", "PageController@contact");
     $router -> post("/contact", "PageController@contactProcess");
-    $router -> get("/notFound", "ErrorController@notFound");
-    $router -> get("/internalError", "ErrorController@internalError");
+
 
 ?>
