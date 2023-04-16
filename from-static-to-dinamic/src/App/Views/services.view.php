@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | PAW Backend</title>
+    <?php require "Fragments/head.view.php"?>
 </head>
 <body>
     <header>
-        <h1><?= $titulo ?></h1>        
+        <h1><?= $title ?></h1>        
         <?php
             require "Fragments/nav.view.php"
         ?>
