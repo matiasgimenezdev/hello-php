@@ -1,12 +1,18 @@
 <?php
     require __DIR__."/../vendor/autoload.php";
-    
+
     use PAW\Core\Router;
+    use PAW\Core\Config;
+
     use Monolog\Logger;
     use Monolog\Handler\StreamHandler;
+    
+    $config = new Config;
 
     $logger = new Logger("mvc-app");
-    $logger -> pushHandler(new StreamHandler(__DIR__."/../logs/app.log", LOGGER::DEBUG));
+    $logHandler = new StreamHandler($config -> getConfig("LOG_PATH"));
+    $logHandler -> setLevel($config -> getConfig("LOG_LEVEL"));
+    $logger -> pushHandler($logHandler);
     
     $whoops = new \Whoops\Run; // Crea una instancia de la clase "Run" de la libreria "Whoops".
     $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler); // Crea una instancia de la clase "PrettyHandler" de la libreria "Whoops\Handler".
