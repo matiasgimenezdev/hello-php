@@ -22,6 +22,7 @@
     $whoops -> register();
 
     $router = new Router;
+    $router -> setLogger($logger);
     $router -> get("/", "PageController@index");
     $router -> get("/about", "PageController@about");
     $router -> get("/services", "PageController@services");

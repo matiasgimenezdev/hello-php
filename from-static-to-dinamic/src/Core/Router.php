@@ -2,8 +2,11 @@
     namespace PAW\Core;
     use PAW\Core\Exceptions\RouteNotFoundException;
     use PAW\Core\Request;
-    
-    class Router {
+    use PAW\Core\Traits\Loggable;
+
+    class Router  {
+        use Loggable;
+
         public array $routes = [
             "GET" => [],
             "POST" => []
@@ -51,12 +54,26 @@
             try{
                 list($path, $httpMethod) = $request -> route();
                 list($controller, $method) = $this -> getController($path, $httpMethod);
-                $this -> call($controller, $method);
+                $this -> logger -> info(
+                    "Status Code: 200",
+                    [
+                        "Path" => $path,
+                        "Method" => $httpMethod
+                    ]
+                ) ;
             } catch (RouteNotFoundException $exception) {
                 list($controller, $method) = $this -> getController($this -> notFound, "GET");
-                $this -> call($controller, $method);
+                $this -> logger -> debug(
+                    "Status Code: 404 - Route Not Found",
+                    ["ERROR" => $exception]
+                );
             } catch (Exception $exception) {
                 list($controller, $method) = $this -> getController($this -> internalError, "GET");
+                $this -> logger -> error(
+                    "Status Code: 500 - Internal server error",
+                    ["ERROR" => $exception]
+                );
+            } finally {
                 $this -> call($controller, $method);
             }
         }
