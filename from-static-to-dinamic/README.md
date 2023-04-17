@@ -12,6 +12,8 @@ Acá va la descripcion del proyecto
 
 -   cp .env.example .env # Editar el .env con los valores deseados
 
+-   Ejecutar migrations `phinx migrate -e development` 
+
 -   Ejecutar php -S localhost:port -t public
 
 LICENSE.md # Licencias
