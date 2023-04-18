@@ -10,7 +10,13 @@
         public $fields = [
             "name" => null,
             "email" => null,
+            "id" => null,
         ];
+
+        public function setId($id){
+            $this -> fields["id"] = $id;
+
+        }
 
         public function setName (string $name) {
             if(strlen($name) > 60) {
@@ -34,7 +40,12 @@
                 $method = "set". ucfirst($field); // setName() o setEmail()
                 $this -> $method($values[$field]);
             }
+        }
 
+        public function load($id) {
+            $params = ["id" => $id];
+            $record = current($this -> queryBuilder -> select($this-> table, $params));             
+            $this -> set($record);
         }
     }
 

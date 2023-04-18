@@ -14,6 +14,7 @@
         <table>
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
                 </tr>
@@ -21,7 +22,12 @@
             <tbody>
                 <?php foreach($authors as $author):?>
                     <tr>
-                        <td><?= $author -> fields["name"] ?></td>
+                        <td><?= $author -> fields["id"] ?></td>
+                        <td>
+                            <a href="/author?id=<?= $author -> fields["id"] ?>">
+                            <?= $author -> fields["name"] ?>
+                            </a>
+                        </td>
                         <td><?= $author -> fields["email"] ?></td>
                     </tr>
                 

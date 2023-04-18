@@ -16,6 +16,11 @@
         }
 
         public function get() {
+            global $request;
+            $authorId = $request -> get("id");
+            $author = $this -> model -> get($authorId);
+            $title = "Author";
+            require $this -> viewsDir . "author.show.view.php";
         }
 
         public function edit() {

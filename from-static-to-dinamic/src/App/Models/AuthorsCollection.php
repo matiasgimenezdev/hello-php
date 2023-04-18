@@ -18,6 +18,13 @@
             // Retorna un array de instancias de 'Author'.
             return $authorsCollection;
         }
+
+        public function get($id){
+            $author = new Author;
+            $author -> setQueryBuilder($this -> queryBuilder);
+            $author -> load($id);
+            return $author;
+        }
     }
 
 ?>
