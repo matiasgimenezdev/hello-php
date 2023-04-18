@@ -10,7 +10,14 @@
             $this -> pdo = $pdo;
         }
 
-        public function select() {}
+        public function select($table) {
+            $query = "SELECT * FROM {$table}";
+            $statement = $this -> pdo -> prepare($query);
+            $statement -> setFetchMode(PDO::FETCH_ASSOC);
+            $statement -> execute();
+            return $statement -> fetchAll();
+        }
+
         public function insert() {}
         public function update() {}
         public function delete() {}

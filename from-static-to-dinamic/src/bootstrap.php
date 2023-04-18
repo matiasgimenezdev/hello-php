@@ -20,7 +20,7 @@
 
     $connectionBuilder = new ConnectionBuilder;
     $connectionBuilder -> setLogger($logger);
-    $connectionBuilder -> make($config);
+    $connection = $connectionBuilder -> make($config);
     
     $whoops = new \Whoops\Run; // Crea una instancia de la clase "Run" de la libreria "Whoops".
     $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler); // Crea una instancia de la clase "PrettyHandler" de la libreria "Whoops\Handler".

@@ -9,7 +9,6 @@
 
         public function setQueryBuilder(QueryBuilder $queryBuilder){
             $this -> queryBuilder = $queryBuilder;
-            $this -> queryBuilder -> setLogger($this -> logger);
         }
     }
 ?>

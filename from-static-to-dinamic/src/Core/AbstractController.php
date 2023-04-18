@@ -29,6 +29,10 @@
                 [
                     "href" => "/contact",
                     "name" => "Contact",
+                ],
+                [
+                    "href" => "/authors",
+                    "name" => "Authors",
                 ]
             ]; 
 
@@ -37,7 +41,7 @@
                 controlador */
             if(!is_null($this -> modelName)){
                 // Usamos las variables globales (incorrecto - Mejor usar Singleton o Contenedor de dependencias).
-                $queryBuilder = new QueryBuilder($connection, $log);
+                $queryBuilder = new QueryBuilder($connection);
                 $queryBuilder -> setLogger($logger);
                 $model = new $this -> modelName;
                 $model -> setQueryBuilder($queryBuilder);
@@ -45,7 +49,7 @@
             }
         }
 
-        public function setModel(Model $model) {
+        public function setModel(AbstractModel $model) {
             $this -> model = $model;
         }
     }
