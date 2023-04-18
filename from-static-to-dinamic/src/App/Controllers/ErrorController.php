@@ -1,31 +1,8 @@
 <?php 
     namespace PAW\App\Controllers;
+    use PAW\Core\AbstractController;
 
-    class ErrorController {
-        public string $viewsDir;
-        public $menu;
-        
-        public function __construct() {
-            $this -> viewsDir = __DIR__ . "/../Views/";
-            $this -> menu = [
-                [
-                    "href" => "/",
-                    "name" => "Home",
-                ],
-                [
-                    "href" => "/about",
-                    "name" => "About us",
-                ],
-                [
-                    "href" => "/services",
-                    "name" => "Services",
-                ],
-                [
-                    "href" => "/contact",
-                    "name" => "Contact",
-                ]
-            ]; 
-        }
+    class ErrorController extends AbstractController{
 
         public function notFound() {
             http_response_code(404); 

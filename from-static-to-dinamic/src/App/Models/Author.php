@@ -34,6 +34,7 @@
                 $method = "set". ucfirst($field); // setName() o setEmail()
                 $this -> $method($values[$field]);
             }
+
         }
     }
 

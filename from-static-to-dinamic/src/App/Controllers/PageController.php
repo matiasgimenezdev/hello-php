@@ -1,31 +1,8 @@
 <?php 
     namespace PAW\App\Controllers;
-
-    class PageController {
-        public string $viewsDir;
-        public $menu;
-        
-        public function __construct() {
-            $this -> viewsDir = __DIR__ . "/../Views/";
-            $this -> menu = [
-                [
-                    "href" => "/",
-                    "name" => "Home",
-                ],
-                [
-                    "href" => "/about",
-                    "name" => "About us",
-                ],
-                [
-                    "href" => "/services",
-                    "name" => "Services",
-                ],
-                [
-                    "href" => "/contact",
-                    "name" => "Contact",
-                ]
-            ]; 
-        }
+    use PAW\Core\AbstractController;
+    
+    class PageController extends AbstractController{
 
         public function index() {
             // $title = "Hello world, ". htmlspecialchars($_GET['nombre'] ?? "PAW");
