@@ -16,14 +16,12 @@ Acá va la descripcion del proyecto
 
 -   Ejecutar php -S localhost:port -t public
 
-<!--
-
-# LICENSE.md # Licencias
+#### Otros posibles .md files
   
-# CHANGELOG.md # Historial cambios del proyecto
+- LICENSE.md # Licencias
   
-# CONTRIBUTING.md # Instrucciones para colaborar para el proyecto
+- CHANGELOG.md # Historial cambios del proyecto
   
-# AUTORES.md # Participantes del proyecto
-
--->
+- CONTRIBUTING.md # Instrucciones para colaborar para el proyecto
+  
+- AUTORES.md # Participantes del proyecto
