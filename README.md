@@ -17,6 +17,9 @@ Acá va la descripcion del proyecto
 -   Ejecutar php -S localhost:port -t public
 
 [//]: # LICENSE.md # Licencias
+  
 [//]: # CHANGELOG.md # Historial cambios del proyecto
+  
 [//]: # CONTRIBUTING.md # Instrucciones para colaborar para el proyecto
+  
 [//]: # AUTORES.md # Participantes del proyecto
