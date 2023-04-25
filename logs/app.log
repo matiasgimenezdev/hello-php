@@ -29,3 +29,6 @@
 [2023-04-16T14:56:38.263998-03:00] mvc-app.INFO: Status Code: 200 {"Path":"/contact","Method":"POST"} []
 [2023-04-16T14:56:41.725499-03:00] mvc-app.DEBUG: Status Code: 404 - Route Not Found {"ERROR":"[object] (PAW\\Core\\Exceptions\\RouteNotFoundException(code: 0): There is no route for that path at /home/mgimenez/repos/paw/php-example/from-static-to-dinamic/src/Core/Router.php:42)"} []
 [2023-04-16T14:56:42.806217-03:00] mvc-app.INFO: Status Code: 200 {"Path":"/","Method":"GET"} []
+[2023-04-25T10:03:03.867453-03:00] mvc-app.INFO: Status Code: 200 {"Path":"/","Method":"GET"} []
+[2023-04-25T10:03:05.545591-03:00] mvc-app.INFO: Status Code: 200 {"Path":"/contact","Method":"GET"} []
+[2023-04-25T10:03:10.381086-03:00] mvc-app.INFO: Status Code: 200 {"Path":"/authors","Method":"GET"} []
